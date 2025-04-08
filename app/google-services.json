@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "657267580197",
+    "project_id": "moviedemo-cccc5",
+    "storage_bucket": "moviedemo-cccc5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657267580197:android:81fe2de9c56aca041d4ecc",
+        "android_client_info": {
+          "package_name": "com.example.moviedemo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuNg6lFA71S5aWR7nS8vjq0a3RjaZMykA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
