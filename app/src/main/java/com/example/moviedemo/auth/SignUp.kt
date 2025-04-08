@@ -9,31 +9,31 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.moviedemo.R
-import com.example.moviedemo.databinding.ActivityLoginBinding
+import com.example.moviedemo.databinding.ActivitySignUpBinding
 
-class Login : AppCompatActivity() {
+class SignUp : AppCompatActivity() {
 
-    private lateinit var binding: ActivityLoginBinding
+    private lateinit var binding: ActivitySignUpBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityLoginBinding.inflate(layoutInflater)
+        binding = ActivitySignUpBinding.inflate(layoutInflater)
 
-        binding.txtRegister.setOnClickListener {
-            var intent = Intent(this, SignUp::class.java)
-            startActivity(intent)
+        binding.lbLogin.setOnClickListener {
+            startActivity(Intent(this, Login::class.java))
         }
 
-        binding.lbForget.setOnClickListener {
-            startActivity(Intent(this, ForgetPassword::class.java))
-        }
-
-        binding.btnSignIn.setOnClickListener{
+        binding.btnSignUp.setOnClickListener{
+            var name = binding.etName.text.toString()
             var email = binding.etEmail.text.toString()
             var password = binding.etPassword.text.toString()
-
-            if(TextUtils.isEmpty(email))
+            if(TextUtils.isEmpty(name))
+            {
+                binding.etName.error="Name is required"
+                binding.etName.requestFocus()
+            }
+            else if(TextUtils.isEmpty(email))
             {
                 binding.etEmail.error="Email is required"
                 binding.etEmail.requestFocus()
@@ -45,10 +45,11 @@ class Login : AppCompatActivity() {
             }
             else
             {
-                Log.e("Login", "Email: $email, Password: $password")
+                Log.e("SignUp", "Name: $name, Email: $email, Password: $password")
             }
         }
 
         setContentView(binding.root)
+
     }
 }
